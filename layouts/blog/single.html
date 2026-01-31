@@ -1,48 +1,36 @@
 {{ define "main" }}
 
+<main style="max-width: 900px; margin: 0 auto; padding: 0 1rem;">
+
 <article>
   <div class="article-header">
     <h1 class="article-title">{{ .Title }}</h1>
-    
     <div class="article-meta">
-      <div class="article-meta-item">
-        📅 {{ .Date.Format "2006.01.02" }}
-      </div>
+      <span>📅 {{ .Date.Format "2006.01.02" }}</span>
       {{ if .ReadingTime }}
-      <div class="article-meta-item">
-        ⏱️ {{ .ReadingTime }} 分で読める
-      </div>
+      <span>⏱️ {{ .ReadingTime }} 分</span>
       {{ end }}
     </div>
-    
-    {{ if .Description }}
-    <p style="color: var(--text-secondary); font-style: italic; margin-bottom: 1rem;">{{ .Description }}</p>
-    {{ end }}
-    
-    {{ if .Params.tags }}
-    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem;">
-      {{ range .Params.tags }}
-      <span class="tag">{{ . }}</span>
-      {{ end }}
-    </div>
-    {{ end }}
   </div>
-  
+
   <div class="article-content">
     {{ .Content }}
   </div>
-  
+
   <div class="article-footer">
-    <div class="cta-section">
-      <h3 style="color: white; border: none;">RAISEBLUE で実践を始めよう</h3>
-      <p style="color: rgba(255, 255, 255, 0.9);">
-        この記事で学んだ知識を、福岡・天神の RAISEBLUE でリアルに実践してみませんか？
-      </p>
-      <a href="https://line.me/R/ti/p/@976eputr" class="btn btn-primary" style="background: white; color: #0066ff; margin-top: 1rem;">
-        LINE で詳細を確認
-      </a>
-    </div>
+    <p style="text-align: center; color: var(--text-secondary);">
+      この記事について質問やご感想がありましたら、<a href="https://line.me/R/ti/p/@976eputr">LINE</a> までお気軽にお問い合わせください。
+    </p>
+  </div>
+
+  <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--gradient-primary); border-radius: 1rem;">
+    <h3 style="color: white; border: none; margin: 0 0 1rem 0;">他の記事を読む</h3>
+    <a href="/blog/" style="display: inline-block; padding: 0.75rem 1.5rem; background: white; color: #0066ff; border-radius: 0.5rem; text-decoration: none; font-weight: 600;">
+      ← ブログに戻る
+    </a>
   </div>
 </article>
+
+</main>
 
 {{ end }}

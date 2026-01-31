@@ -8,8 +8,5 @@ author = "RAISEBLUE"
 description = "福岡・天神のポーカーバー。アルコール飲み放題1000円、業界最速クラス、ウェブコイン手数料0%。本気のポーカーを、より安く。"
 keywords = "ポーカー, ポーカーバー, 福岡, 天神, オンラインポーカー"
 
-[outputs]
-home = ["HTML", "JSON"]
-
 [markup.goldmark.renderer]
 unsafe = true
