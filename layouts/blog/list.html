@@ -1,46 +1,29 @@
 {{ define "main" }}
 
+<main style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+
 <div style="text-align: center; margin: 3rem 0;">
   <h1>{{ .Title }}</h1>
   <p style="color: var(--text-secondary); font-size: 1.1rem;">
     {{ .Description }}
   </p>
+  <p style="color: var(--text-secondary); margin-top: 2rem;">
+    毎日のポーカー知識・戦略記事を発信中。随時更新されます。
+  </p>
+  <a href="/" class="btn btn-secondary" style="margin-top: 2rem;">← ホームに戻る</a>
 </div>
 
-<div class="posts-container">
-  {{ range .Pages }}
-  <article class="post-card">
-    <div class="post-card-header">
-      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-    </div>
-    <div class="post-card-body">
-      <div class="post-meta">
-        <div class="post-meta-item">
-          📅 {{ .Date.Format "2006.01.02" }}
-        </div>
-        {{ if .ReadingTime }}
-        <div class="post-meta-item">
-          ⏱️ {{ .ReadingTime }} 分
-        </div>
-        {{ end }}
-      </div>
-      
-      {{ if .Description }}
-      <p class="post-description">{{ .Description }}</p>
-      {{ else }}
-      <p class="post-description">{{ .Summary | plainify | truncate 120 }}</p>
-      {{ end }}
-      
-      {{ if .Params.tags }}
-      <div class="post-tags">
-        {{ range .Params.tags }}
-        <span class="tag">{{ . }}</span>
-        {{ end }}
-      </div>
-      {{ end }}
-    </div>
-  </article>
-  {{ end }}
+<div class="cta-section" style="text-align: center;">
+  <h3 style="color: white; border: none;">記事数はすぐに増えます</h3>
+  <p>当サイトは、ポーカーについての深い知識を毎日更新しています。</p>
+  <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">
+    最新記事は LINE でお知らせします。
+  </p>
+  <a href="https://line.me/R/ti/p/@976eputr" class="btn btn-primary" style="background: white; color: #0066ff; font-weight: 600;">
+    LINE で最新情報を受け取る
+  </a>
 </div>
+
+</main>
 
 {{ end }}
