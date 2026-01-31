@@ -1,0 +1,66 @@
+baseURL = "https://raiseblue.site"
+languageCode = "ja-jp"
+title = "RAISEBLUE - 福岡・天神のポーカーバー"
+theme = "PaperMod"
+paginate = 10
+
+[params]
+author = "RAISEBLUE"
+description = "福岡・天神のポーカーバー。アルコール飲み放題1000円、業界最速クラス、ウェブコイン手数料0%。本気のポーカーを、より安く。"
+keywords = "ポーカー, ポーカーバー, 福岡, 天神, オンラインポーカー"
+defaultTheme = "dark"
+ShowReadingTime = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+DateFormat = "2006-01-02"
+
+  [params.homeInfoParams]
+  Title = "RAISEBLUE"
+  Content = "福岡・天神のポーカーバー。ウェブコイン手数料0%、業界最速クラスのゲーム体験をお届けします。"
+
+  [params.socialIcons]
+  [[params.socialIcons]]
+    name = "LINE"
+    url = "https://line.me/R/ti/p/@976eputr"
+  [[params.socialIcons]]
+    name = "X"
+    url = "https://twitter.com"
+
+  [params.assets]
+  disableHLJS = false
+  disableScrollToTop = false
+  favicon = "/favicon.ico"
+
+[[menu.main]]
+name = "ホーム"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "ブログ"
+url = "/blog"
+weight = 2
+
+[[menu.main]]
+name = "営業情報"
+url = "/#営業情報"
+weight = 3
+
+[[menu.main]]
+name = "LINE で相談"
+url = "https://line.me/R/ti/p/@976eputr"
+weight = 4
+
+[outputs]
+home = ["HTML", "JSON"]
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[minify]
+  minifyOutput = true

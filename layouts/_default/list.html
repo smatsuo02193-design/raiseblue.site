@@ -1,0 +1,140 @@
+{{ define "main" }}
+
+<style>
+  .posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .post-card {
+    background: rgba(30, 33, 57, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .post-card:hover {
+    border-color: var(--primary-blue);
+    box-shadow: 0 12px 32px rgba(0, 102, 255, 0.25);
+    transform: translateY(-6px);
+  }
+  
+  .post-card-header {
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--primary-blue);
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+  }
+  
+  .post-card h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+  }
+  
+  .post-card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .post-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  
+  .post-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .post-description {
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .tag {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    background: rgba(0, 102, 255, 0.1);
+    color: var(--primary-light);
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    border: 1px solid rgba(0, 102, 255, 0.3);
+    transition: all 0.2s;
+  }
+  
+  .tag:hover {
+    background: rgba(0, 102, 255, 0.2);
+    border-color: var(--primary-light);
+  }
+  
+  .page-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+</style>
+
+<div class="page-title">
+  <h1>{{ .Title }}</h1>
+  <p style="color: var(--text-secondary); font-size: 1.1rem;">
+    {{ if eq .Title "Blog" }}最新のポーカー知識と戦略を毎日更新{{ end }}
+  </p>
+</div>
+
+<div class="posts-container">
+  {{ range .Pages }}
+  <article class="post-card">
+    <div class="post-card-header">
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    </div>
+    <div class="post-card-body">
+      <div class="post-meta">
+        <div class="post-meta-item">
+          📅 <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006.01.02" }}</time>
+        </div>
+        {{ if .ReadingTime }}
+        <div class="post-meta-item">
+          ⏱️ {{ .ReadingTime }} 分
+        </div>
+        {{ end }}
+      </div>
+      
+      {{ if .Description }}
+      <p class="post-description">{{ .Description }}</p>
+      {{ else }}
+      <p class="post-description">{{ .Summary | plainify | truncate 120 }}</p>
+      {{ end }}
+      
+      {{ if .Params.tags }}
+      <div class="post-tags">
+        {{ range .Params.tags }}
+        <span class="tag">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </article>
+  {{ end }}
+</div>
+
+{{ end }}

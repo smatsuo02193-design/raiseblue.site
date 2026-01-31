@@ -1,0 +1,191 @@
+{{ define "main" }}
+
+<style>
+  .article-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--primary-blue);
+  }
+  
+  .article-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .article-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+  }
+  
+  .article-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .article-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
+  .tag {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    background: rgba(0, 102, 255, 0.1);
+    color: var(--primary-light);
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    border: 1px solid rgba(0, 102, 255, 0.3);
+    transition: all 0.2s;
+  }
+  
+  .tag:hover {
+    background: rgba(0, 102, 255, 0.2);
+    border-color: var(--primary-light);
+  }
+  
+  .article-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+  }
+  
+  .article-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .article-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .article-content ul,
+  .article-content ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+  }
+  
+  .article-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+  }
+  
+  .article-content blockquote {
+    border-left: 4px solid var(--primary-blue);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+  
+  .article-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+  }
+  
+  .related-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .related-post-card {
+    background: rgba(30, 33, 57, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .related-post-card:hover {
+    border-color: var(--primary-light);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .related-post-card h4 {
+    margin: 0 0 1rem 0;
+  }
+  
+  .related-post-card a {
+    color: var(--primary-light);
+  }
+  
+  @media (max-width: 768px) {
+    .article-title {
+      font-size: 1.8rem;
+    }
+    
+    .article-meta {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+</style>
+
+<article>
+  <div class="article-header">
+    <h1 class="article-title">{{ .Title }}</h1>
+    
+    <div class="article-meta">
+      <div class="article-meta-item">
+        📅 {{ .Date.Format "2006.01.02" }}
+      </div>
+      {{ if .ReadingTime }}
+      <div class="article-meta-item">
+        ⏱️ {{ .ReadingTime }} 分で読める
+      </div>
+      {{ end }}
+    </div>
+    
+    {{ if .Description }}
+    <p class="article-description">{{ .Description }}</p>
+    {{ end }}
+    
+    {{ if .Params.tags }}
+    <div class="article-tags">
+      {{ range .Params.tags }}
+      <span class="tag">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+  
+  <div class="article-content">
+    {{ .Content }}
+  </div>
+  
+  <div class="article-footer">
+    <div class="cta-section">
+      <h3 style="color: white; border: none;">RAISEBLUE で実践を始めよう</h3>
+      <p style="color: rgba(255, 255, 255, 0.9);">
+        この記事で学んだ知識を、福岡・天神の RAISEBLUE でリアルに実践してみませんか？
+      </p>
+      <a href="https://line.me/R/ti/p/@976eputr" class="btn btn-primary" style="background: white; color: #0066ff; margin-top: 1rem;">
+        LINE で詳細を確認
+      </a>
+    </div>
+  </div>
+</article>
+
+{{ end }}
