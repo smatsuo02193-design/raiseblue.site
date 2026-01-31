@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+<div style="text-align: center; margin: 3rem 0;">
+  <h1>{{ .Title }}</h1>
+  <p style="color: var(--text-secondary); font-size: 1.1rem;">
+    {{ .Description }}
+  </p>
+</div>
+
+<div class="posts-container">
+  {{ range .Pages }}
+  <article class="post-card">
+    <div class="post-card-header">
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    </div>
+    <div class="post-card-body">
+      <div class="post-meta">
+        <div class="post-meta-item">
+          📅 {{ .Date.Format "2006.01.02" }}
+        </div>
+        {{ if .ReadingTime }}
+        <div class="post-meta-item">
+          ⏱️ {{ .ReadingTime }} 分
+        </div>
+        {{ end }}
+      </div>
+      
+      {{ if .Description }}
+      <p class="post-description">{{ .Description }}</p>
+      {{ else }}
+      <p class="post-description">{{ .Summary | plainify | truncate 120 }}</p>
+      {{ end }}
+      
+      {{ if .Params.tags }}
+      <div class="post-tags">
+        {{ range .Params.tags }}
+        <span class="tag">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </article>
+  {{ end }}
+</div>
+
+{{ end }}
