@@ -1,50 +1,88 @@
 {{ define "main" }}
-
 <main style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-
 <div style="text-align: center; margin: 3rem 0;">
-  <h1>{{ .Title }}</h1>
+  <h1>ブログ</h1>
   <p style="color: var(--text-secondary); font-size: 1.1rem;">
-    {{ .Description }}
+    ポーカーの基礎から実践的な戦略まで、初心者がすぐに使える知識を毎日発信しています。
   </p>
 </div>
 
 <div class="posts-container">
-  {{ range .Pages }}
-    {{ if eq .Kind "page" }}
-    <article class="post-card">
-      <div class="post-card-header">
-        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+  <article class="post-card">
+    <div class="post-card-header">
+      <h3>ポーカー初心者ガイド｜最初にやるべき5つのこと</h3>
+    </div>
+    <div class="post-card-body">
+      <p class="post-description">ポーカーを始めたい方へ。今日から実践できる5つのステップを解説します。</p>
+      <div class="post-tags">
+        <span class="tag">初心者</span>
+        <span class="tag">基本</span>
       </div>
-      <div class="post-card-body">
-        <div class="post-meta">
-          <div class="post-meta-item">
-            📅 {{ .Date.Format "2006.01.02" }}
-          </div>
-          {{ if .ReadingTime }}
-          <div class="post-meta-item">
-            ⏱️ {{ .ReadingTime }} 分
-          </div>
-          {{ end }}
-        </div>
-        
-        {{ if .Description }}
-        <p class="post-description">{{ .Description }}</p>
-        {{ end }}
-        
-        {{ if .Params.tags }}
-        <div class="post-tags">
-          {{ range .Params.tags }}
-          <span class="tag">{{ . }}</span>
-          {{ end }}
-        </div>
-        {{ end }}
+    </div>
+  </article>
+
+  <article class="post-card">
+    <div class="post-card-header">
+      <h3>テキサスホールデムのハンドランキング完全版</h3>
+    </div>
+    <div class="post-card-body">
+      <p class="post-description">すべてのハンドを強い順に解説。初心者から上級者まで必読。</p>
+      <div class="post-tags">
+        <span class="tag">ハンド</span>
+        <span class="tag">ランキング</span>
       </div>
-    </article>
-    {{ end }}
-  {{ end }}
+    </div>
+  </article>
+
+  <article class="post-card">
+    <div class="post-card-header">
+      <h3>福岡でポーカーを楽しむなら知っておきたい法律知識</h3>
+    </div>
+    <div class="post-card-body">
+      <p class="post-description">ポーカーは違法？合法？福岡でのポーカープレイについて。</p>
+      <div class="post-tags">
+        <span class="tag">法律</span>
+        <span class="tag">福岡</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="post-card">
+    <div class="post-card-header">
+      <h3>ポーカーで勝つための資金管理術｜バンクロール戦略</h3>
+    </div>
+    <div class="post-card-body">
+      <p class="post-description">長期的に勝ち続けるための資金管理テクニック。</p>
+      <div class="post-tags">
+        <span class="tag">資金管理</span>
+        <span class="tag">戦略</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="post-card">
+    <div class="post-card-header">
+      <h3>オンラインポーカー vs 店舗ポーカー｜違いと選び方</h3>
+    </div>
+    <div class="post-card-body">
+      <p class="post-description">オンラインと実店舗。あなたはどちらを選ぶべき？</p>
+      <div class="post-tags">
+        <span class="tag">比較</span>
+        <span class="tag">戦略</span>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div style="text-align: center; margin: 3rem 0; padding: 2rem; background: var(--gradient-primary); border-radius: 1rem;">
+  <h3 style="color: white; border: none; margin: 0 0 1rem 0;">毎日更新中</h3>
+  <p style="color: rgba(255, 255, 255, 0.9); margin: 0 0 1.5rem 0;">
+    最新記事は LINE でお知らせします。
+  </p>
+  <a href="https://line.me/R/ti/p/@976eputr" style="display: inline-block; padding: 0.75rem 1.5rem; background: white; color: #0066ff; border-radius: 0.5rem; text-decoration: none; font-weight: 600;">
+    LINE で最新情報を受け取る
+  </a>
 </div>
 
 </main>
-
 {{ end }}
