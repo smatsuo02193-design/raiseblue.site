@@ -8,9 +8,9 @@
 </div>
 
 <div class="posts-container">
-  <!-- DEBUG: Total .Pages = {{ len .Pages }}, Kind = {{ .Kind }}, Section = {{ .Section }} -->
-  {{ range .Pages }}
-  <!-- Page: {{ .Title }}, IsSection: {{ .IsSection }}, Type: {{ .Type }} -->
+  {{ $allPages := where site.AllPages "Section" "blog" }}
+  {{ $articles := where $allPages "Kind" "page" }}
+  {{ range $articles }}
   <article class="post-card">
     <div class="post-card-header">
       <h3><a href="{{ .Permalink }}" style="color: inherit; text-decoration: none;">{{ .Title }}</a></h3>

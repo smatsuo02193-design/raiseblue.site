@@ -10,7 +10,9 @@
 </div>
 
 <div class="posts-container">
-  {{ range .Pages }}
+  {{ range .Sections }}
+    {{ range .Pages }}
+    {{ if eq .Kind "page" }}
   <article class="post-card">
     <div class="post-card-header">
       <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
@@ -42,6 +44,8 @@
       {{ end }}
     </div>
   </article>
+    {{ end }}
+    {{ end }}
   {{ end }}
 </div>
 
