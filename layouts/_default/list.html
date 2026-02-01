@@ -9,10 +9,12 @@
   </p>
 </div>
 
+{{ .Content }}
+
 <div class="posts-container">
-  {{ range .Sections }}
-    {{ range .Pages }}
-    {{ if eq .Kind "page" }}
+  {{ $sectionPath := .File.Dir }}
+  {{ range site.RegularPages }}
+    {{ if hasPrefix .File.Path $sectionPath }}
   <article class="post-card">
     <div class="post-card-header">
       <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
@@ -44,7 +46,6 @@
       {{ end }}
     </div>
   </article>
-    {{ end }}
     {{ end }}
   {{ end }}
 </div>
