@@ -10,7 +10,8 @@
 {{ .Content }}
 
 <div class="posts-container">
-  {{- range sort .Sections "Date" "desc" -}}
+  {{- range sort .Pages "Date" "desc" -}}
+  {{ if .IsSection }}
   <article class="post-card">
     <div class="post-card-header">
       <h3><a href="{{ .Permalink }}" style="color: inherit; text-decoration: none;">{{ .Title }}</a></h3>
@@ -42,6 +43,7 @@
       {{ end }}
     </div>
   </article>
+  {{ end }}
   {{- end -}}
 </div>
 
