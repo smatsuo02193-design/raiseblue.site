@@ -1,0 +1,90 @@
+/* ===== ヒーロー背景エフェクト ===== */
+
+.hero {
+  /* ポーカーテーブルを想起させる背景 */
+  background: 
+    /* グラデーションオーバーレイ（上から下へ、テキスト可読性確保） */
+    linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.95) 0%,
+      rgba(15, 23, 42, 0.85) 20%,
+      rgba(26, 31, 58, 0.8) 50%,
+      rgba(10, 14, 26, 0.9) 100%
+    ),
+    /* ベースグラデーション（ポーカーテーブルのフェルト風） */
+    linear-gradient(
+      135deg,
+      #0a3d5c 0%,      /* 深い青緑 */
+      #0f172a 25%,     /* ダークネイビー */
+      #1a2f4d 50%,     /* ポーカーテーブル風 */
+      #0d1b35 75%,     /* 濃紺 */
+      #050b16 100%     /* 極暗紺 */
+    );
+  background-attachment: fixed;
+}
+
+/* ポーカーチップを想起させるアクセント */
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.08) 0%,    /* ゴールド（チップ） */
+    rgba(0, 102, 255, 0.12) 30%,   /* 青 */
+    transparent 70%
+  );
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 0 120px rgba(0, 102, 255, 0.15);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 212, 255, 0.1) 0%,     /* シアン */
+    rgba(255, 193, 7, 0.06) 40%,   /* ゴールド */
+    transparent 70%
+  );
+  border-radius: 50%;
+  bottom: -150px;
+  left: -100px;
+  animation: float 8s ease-in-out infinite reverse;
+  box-shadow: 0 0 100px rgba(255, 215, 0, 0.1);
+}
+
+/* テーブルパターンエフェクト（遠景） */
+.hero::before {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 100px,
+      rgba(0, 102, 255, 0.03) 100px,
+      rgba(0, 102, 255, 0.03) 110px
+    );
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .hero::before {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    right: -50px;
+  }
+
+  .hero::after {
+    width: 250px;
+    height: 250px;
+    bottom: -100px;
+    left: -50px;
+  }
+}
