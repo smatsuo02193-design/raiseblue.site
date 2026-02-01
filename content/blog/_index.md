@@ -6,7 +6,7 @@ type: blog
 
 <div class="posts-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; margin: 3rem 0;">
 
-<article class="post-card" style="cursor: pointer;" onclick="window.location.href='/blog/001-beginners/'" style="background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;">
+<article class="post-card" style="cursor: pointer; background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;" onclick="window.location.href='/blog/001-beginners/'">
   <div class="post-card-header" style="padding: 1.5rem; border-bottom: 2px solid var(--primary-blue); background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);">
     <h3 style="margin: 0; font-size: 1.1rem;"><a href="/blog/001-beginners/" style="color: inherit; text-decoration: none;">ポーカー初心者ガイド｜最初にやるべき5つのこと</a></h3>
   </div>
@@ -18,7 +18,7 @@ type: blog
   </div>
 </article>
 
-<article class="post-card" style="cursor: pointer;" onclick="window.location.href='/blog/002-hands/'" style="background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;">
+<article class="post-card" style="cursor: pointer; background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;" onclick="window.location.href='/blog/002-hands/'">
   <div class="post-card-header" style="padding: 1.5rem; border-bottom: 2px solid var(--primary-blue); background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);">
     <h3 style="margin: 0; font-size: 1.1rem;"><a href="/blog/002-hands/" style="color: inherit; text-decoration: none;">テキサスホールデムのハンドランキング完全版</a></h3>
   </div>
@@ -30,7 +30,7 @@ type: blog
   </div>
 </article>
 
-<article class="post-card" style="cursor: pointer;" onclick="window.location.href='/blog/003-law/'" style="background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;">
+<article class="post-card" style="cursor: pointer; background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;" onclick="window.location.href='/blog/003-law/'">
   <div class="post-card-header" style="padding: 1.5rem; border-bottom: 2px solid var(--primary-blue); background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);">
     <h3 style="margin: 0; font-size: 1.1rem;"><a href="/blog/003-law/" style="color: inherit; text-decoration: none;">福岡でポーカーを楽しむなら知っておきたい法律知識</a></h3>
   </div>
@@ -42,7 +42,7 @@ type: blog
   </div>
 </article>
 
-<article class="post-card" style="cursor: pointer;" onclick="window.location.href='/blog/004-bankroll/'" style="background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;">
+<article class="post-card" style="cursor: pointer; background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;" onclick="window.location.href='/blog/004-bankroll/'">
   <div class="post-card-header" style="padding: 1.5rem; border-bottom: 2px solid var(--primary-blue); background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);">
     <h3 style="margin: 0; font-size: 1.1rem;"><a href="/blog/004-bankroll/" style="color: inherit; text-decoration: none;">ポーカーで勝つための資金管理術｜バンクロール戦略</a></h3>
   </div>
@@ -54,7 +54,7 @@ type: blog
   </div>
 </article>
 
-<article class="post-card" style="cursor: pointer;" onclick="window.location.href='/blog/005-online-vs/'" style="background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;">
+<article class="post-card" style="cursor: pointer; background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;" onclick="window.location.href='/blog/005-online-vs/'">
   <div class="post-card-header" style="padding: 1.5rem; border-bottom: 2px solid var(--primary-blue); background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);">
     <h3 style="margin: 0; font-size: 1.1rem;"><a href="/blog/005-online-vs/" style="color: inherit; text-decoration: none;">オンラインポーカー vs 店舗ポーカー｜違いと選び方</a></h3>
   </div>
@@ -66,7 +66,7 @@ type: blog
   </div>
 </article>
 
-<article class="post-card" style="cursor: pointer;" onclick="window.location.href='/blog/006-poker-terms/'" style="background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;">
+<article class="post-card" style="cursor: pointer; background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;" onclick="window.location.href='/blog/006-poker-terms/'">
   <div class="post-card-header" style="padding: 1.5rem; border-bottom: 2px solid var(--primary-blue); background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);">
     <h3 style="margin: 0; font-size: 1.1rem;"><a href="/blog/006-poker-terms/" style="color: inherit; text-decoration: none;">ポーカー用語辞典｜必須用語50選</a></h3>
   </div>
@@ -78,7 +78,7 @@ type: blog
   </div>
 </article>
 
-<article class="post-card" style="cursor: pointer;" onclick="window.location.href='/blog/007-poker-psychology/'" style="background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;">
+<article class="post-card" style="cursor: pointer; background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;" onclick="window.location.href='/blog/007-poker-psychology/'">
   <div class="post-card-header" style="padding: 1.5rem; border-bottom: 2px solid var(--primary-blue); background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);">
     <h3 style="margin: 0; font-size: 1.1rem;"><a href="/blog/007-poker-psychology/" style="color: inherit; text-decoration: none;">ポーカープレイヤーの心理学｜ブラフと読み合いの極意</a></h3>
   </div>
@@ -90,7 +90,7 @@ type: blog
   </div>
 </article>
 
-<article class="post-card" style="cursor: pointer;" onclick="window.location.href='/blog/008-tournament-strategy/'" style="background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;">
+<article class="post-card" style="cursor: pointer; background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;" onclick="window.location.href='/blog/008-tournament-strategy/'">
   <div class="post-card-header" style="padding: 1.5rem; border-bottom: 2px solid var(--primary-blue); background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);">
     <h3 style="margin: 0; font-size: 1.1rem;"><a href="/blog/008-tournament-strategy/" style="color: inherit; text-decoration: none;">ポーカートーナメント戦略｜勝つためのステップバイステップガイド</a></h3>
   </div>
@@ -102,7 +102,7 @@ type: blog
   </div>
 </article>
 
-<article class="post-card" style="cursor: pointer;" onclick="window.location.href='/blog/009-poker-style/'" style="background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;">
+<article class="post-card" style="cursor: pointer; background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;" onclick="window.location.href='/blog/009-poker-style/'">
   <div class="post-card-header" style="padding: 1.5rem; border-bottom: 2px solid var(--primary-blue); background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);">
     <h3 style="margin: 0; font-size: 1.1rem;"><a href="/blog/009-poker-style/" style="color: inherit; text-decoration: none;">自分のポーカースタイルを見つける方法｜タイプ診断+改善法</a></h3>
   </div>
@@ -114,7 +114,7 @@ type: blog
   </div>
 </article>
 
-<article class="post-card" style="cursor: pointer;" onclick="window.location.href='/blog/010-tenjin-guide/'" style="background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;">
+<article class="post-card" style="cursor: pointer; background: rgba(30, 33, 57, 0.5); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;" onclick="window.location.href='/blog/010-tenjin-guide/'">
   <div class="post-card-header" style="padding: 1.5rem; border-bottom: 2px solid var(--primary-blue); background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);">
     <h3 style="margin: 0; font-size: 1.1rem;"><a href="/blog/010-tenjin-guide/" style="color: inherit; text-decoration: none;">天神エリアの過ごし方ガイド｜ポーカーバー+グルメ+スポット</a></h3>
   </div>
