@@ -7,14 +7,18 @@
   <p style="color: var(--text-secondary); font-size: 1.1rem;">
     最新のポーカー知識と戦略を毎日更新
   </p>
+  <p style="background: #333; color: #fff; padding: 10px; margin: 10px 0; font-family: monospace;">
+    Kind: {{ .Kind }} | Section: {{ .Section }} | Type: {{ .Type }} | Layout: list.html
+  </p>
+  <div style="background: #f0f0f0; color: #000; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; text-align: left; white-space: pre-wrap; word-break: break-word;">
+    Content (first 200 chars): {{ .Content | plainify | truncate 200 }}
+  </div>
 </div>
 
 {{ .Content }}
 
 <div class="posts-container">
-  {{ $sectionPath := .File.Dir }}
-  {{ range site.RegularPages }}
-    {{ if hasPrefix .File.Path $sectionPath }}
+  {{- range sort .Sections "Date" "desc" -}}
   <article class="post-card">
     <div class="post-card-header">
       <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
@@ -46,8 +50,17 @@
       {{ end }}
     </div>
   </article>
-    {{ end }}
-  {{ end }}
+  {{- end -}}
+</div>
+
+<div style="text-align: center; margin: 3rem 0; padding: 2rem; background: var(--gradient-primary); border-radius: 1rem;">
+  <h3 style="color: white; border: none; margin: 0 0 1rem 0;">毎日更新中</h3>
+  <p style="color: rgba(255, 255, 255, 0.9); margin: 0 0 1.5rem 0;">
+    最新記事は LINE でお知らせします。
+  </p>
+  <a href="https://line.me/R/ti/p/@976eputr" style="display: inline-block; padding: 0.75rem 1.5rem; background: white; color: #0066ff; border-radius: 0.5rem; text-decoration: none; font-weight: 600;">
+    LINE で最新情報を受け取る
+  </a>
 </div>
 
 </main>
