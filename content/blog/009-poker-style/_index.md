@@ -1,6 +1,6 @@
 ---
 title: "自分のポーカースタイルを見つける方法｜タイプ診断+改善法"
-description: "Tight/Loose × Passive/Aggressive。あなたのポーカースタイルはどのタイプ？"
+description: "自分のポーカースタイルを見つけるための診断ガイド。Tight/Loose × Passive/Aggressive の 4 タイプを解説し、改善策を提示。スタイル診断テスト付き。"
 date: 2026-02-09
 draft: false
 tags: ["スタイル", "診断"]
